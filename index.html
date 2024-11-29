@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synapse X Restoration</title>
+    <style>
+        /* Global reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body and general background */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0f0f0f;
+            overflow: hidden;
+            color: white;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            justify-content: center; /* Vertically center content */
+            align-items: center; /* Horizontally center content */
+            cursor: url('https://cdn.discordapp.com/attachments/1311155006006755351/1311902758995099659/notclick.png?ex=674a8c27&is=67493aa7&hm=89f4085b0ffaa77126c1974baabd5a683c7fa9d57bb6f01401d43e9dac630876&'), auto; /* Add custom cursor */
+        }
+
+        /* Container and content styling */
+        .container {
+            text-align: center;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;  /* Center the content horizontally */
+        }
+
+        .title {
+            font-size: 48px;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+            animation: shine 3s infinite ease-in-out; /* Glowing animation */
+        }
+
+        .subtitle {
+            font-size: 24px;
+            color: #c39bc5;
+            margin-bottom: 50px;
+            position: relative;
+            display: inline-block;
+            animation: shine 3s infinite ease-in-out; /* Same animation as title */
+        }
+
+        /* Glowing effect animation */
+        @keyframes shine {
+            0% {
+                text-shadow: 0 0 4px rgba(255, 255, 255, 0.5), 0 0 10px rgba(255, 255, 255, 0.6), 0 0 14px rgba(255, 255, 255, 0.7), 0 0 20px rgba(0, 204, 255, 0.8), 0 0 33px rgba(0, 204, 255, 0.8), 0 0 41px rgba(0, 204, 255, 0.9), 0 0 51px rgba(0, 204, 255, 0.9);
+            }
+            50% {
+                text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 15px rgba(255, 255, 255, 0.6), 0 0 23px rgba(255, 255, 255, 0.7), 0 0 40px rgba(0, 204, 255, 0.8), 0 0 60px rgba(0, 204, 255, 0.8), 0 0 80px rgba(0, 204, 255, 1), 0 0 100px rgba(0, 204, 255, 1);
+            }
+            100% {
+                text-shadow: 0 0 4px rgba(255, 255, 255, 0.5), 0 0 10px rgba(255, 255, 255, 0.6), 0 0 14px rgba(255, 255, 255, 0.7), 0 0 20px rgba(0, 204, 255, 0.8), 0 0 33px rgba(0, 204, 255, 0.8), 0 0 41px rgba(0, 204, 255, 0.9), 0 0 51px rgba(0, 204, 255, 0.9);
+            }
+        }
+
+        /* Buttons container */
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+
+        /* Button styles */
+        .button {
+            position: relative;
+            padding: 15px 30px;
+            border-radius: 50px;
+            border: none;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            background: linear-gradient(145deg, #6e7bff, #4758ff);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s ease;
+            outline: none;
+            overflow: hidden;
+            transform: scale(1);
+        }
+
+        /* Button hover effects */
+        .button:hover {
+            background: linear-gradient(145deg, #4758ff, #6e7bff);
+            transform: scale(1.1) rotate(3deg); /* Subtle scale and rotation effect */
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4); /* Stronger shadow */
+        }
+
+        .button:active {
+            transform: scale(0.95) rotate(-2deg); /* Slight shrinking and reverse rotation */
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); /* Reduced shadow on active click */
+        }
+
+        .button::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transition: width 0.5s, height 0.5s, top 0.5s, left 0.5s;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+        }
+
+        .button:hover::before {
+            width: 0;
+            height: 0;
+            top: 50%;
+            left: 50%;
+        }
+
+        /* Falling dots background */
+        .dot {
+            position: absolute;
+            border-radius: 50%;
+            background-color: white;
+            z-index: -1; /* Place dots behind content */
+            animation: fall 8s infinite linear; /* Continuous, smooth falling */
+        }
+
+        /* Animation for falling dots */
+        @keyframes fall {
+            0% {
+                transform: translateY(-650px); /* Start just above the screen */
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateY(100vh); /* Fall to the bottom of the screen */
+                opacity: 1;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="title">Synapse X Restoration</div>
+        <div class="subtitle">The best Synapse X Remake as of 2024</div>
+
+        <div class="buttons">
+            <button class="button" onclick="window.location.href='https://cdn.discordapp.com/attachments/1309610392879759450/1309612226507968612/SynapseXBootstrapper.exe?ex=6749772e&is=674825ae&hm=602f9c98186e7f9f9d5aa373dc2dafad9312db871fc0456e30b754faa39f459d&'">Download</button>
+            <button class="button" onclick="window.location.href='https://discord.gg/uZEBEynyTU'">Discord</button>
+        </div>
+    </div>
+
+    <script>
+        // Create falling dots
+        function createDots() {
+            for (let i = 0; i < 75; i++) {  // Increased from 50 to 75 dots
+                const dot = document.createElement("div");
+                const size = Math.random() * 5 + 5; // Random size between 5 and 10px
+                const leftPosition = Math.random() * 100 + "%"; // Random horizontal position
+                dot.style.width = `${size}px`;
+                dot.style.height = `${size}px`;
+                dot.style.left = leftPosition;
+                dot.classList.add("dot");
+                document.body.appendChild(dot);
+
+                // Randomize animation timing for each dot
+                dot.style.animationDuration = `${Math.random() * 5 + 4}s`; // Duration between 4s and 9s
+                dot.style.animationDelay = `${Math.random() * 3}s`; // Delay between 0s and 3s
+            }
+        }
+
+        createDots();
+    </script>
+
+</body>
+</html>
